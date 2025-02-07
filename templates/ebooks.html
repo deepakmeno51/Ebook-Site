@@ -1,0 +1,24 @@
+<!-- ebooks.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-book Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">  <!-- Added container for layout control -->
+        <h1>E-book Library</h1>
+        <ul class="book-list">  <!-- Added class for styling -->
+            {% for ebook in ebooks %}
+                <li class="book-item">  <!-- Added class for styling individual books -->
+                    <h2>{{ ebook.title }}</h2>
+                    <p>Author: {{ ebook.author }}</p>
+                    <p>{{ ebook.description }}</p>
+                    <img src="{{ url_for('static', filename=ebook.cover_image) }}" alt="{{ ebook.title }} Cover" class="book-cover">  <!-- Added class for styling -->
+                    <a href="{{ url_for('read_ebook', ebook_id=ebook.id) }}" class="read-button">Read</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>  <!-- Close the container -->
+</body>
+</html>

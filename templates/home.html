@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-book Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homestyle.css') }}">  <!-- Corrected link -->
+    <script src="https://unpkg.com/epubjs/dist/epub.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/epubjs/dist/epub.min.css">
+</head>
+<body>
+    <h1>Welcome to the E-book Library!</h1>
+
+    <h2>Featured E-book</h2>
+    <div id="featured-book"></div>
+
+    <script>
+        // **Crucial**: Get the correct path to your ebook.  This is *crucial*
+        const ebookPath = "{{ url_for('static', filename='ebooks/your_ebook.epub') }}"; // Replace with correct path
+        var book = ePub(ebookPath);
+        if (book) {
+            var rendition = book.renderTo("featured-book", { width: 400, height: 300 });
+            rendition.display();
+        } else {
+            console.error("Error loading ePub file:", ebookPath);
+        }
+    </script>
+</body>
+</html>

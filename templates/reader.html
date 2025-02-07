@@ -1,0 +1,21 @@
+<!-- reader.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ ebook.title }} - Online Reader</title>
+    <script src="https://unpkg.com/epubjs/dist/epub.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/epubjs/dist/epub.min.css">
+</head>
+<body>
+    <h1>{{ ebook.title }}</h1>
+    <div id="book-container"></div>
+    <script>
+        var ebookPath = "{{ url_for('send_static_file', filename=ebook.file_path) }}";
+        var book = ePub(ebookPath);
+        if(book){
+            var rendition = book.renderTo("book-container", { width: 800, height: 600 });
+            rendition.display();
+        }
+    </script>
+</body>
+</html>

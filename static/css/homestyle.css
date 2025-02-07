@@ -1,0 +1,107 @@
+/* style.css */
+
+body {
+    font-family: 'Roboto', sans-serif; /* Or a similar, legible sans-serif font */
+    background-color: #333;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    background-color: #635148;
+    padding: 20px;
+    text-align: center;
+    color: #f0e6da; /* light beige */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    /* subtle shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  .search-container {
+    margin-top: 20px;
+    background-color: #f0e6da;
+    border-radius: 5px;
+    overflow: hidden; /* For better image display */
+  }
+  
+  
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-gap: 20px;
+    padding: 20px;
+  }
+  
+  .book-item {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-item:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .book-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .book-item h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+  }
+  
+  .book-item p {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+    overflow: hidden;  /* Hide anything exceeding container */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    white-space: nowrap; /* Prevent wrapping of text */
+  }
+  
+  
+  footer {
+    background-color: #635148;
+    color: #eee;
+    text-align: center;
+    padding: 1em;
+    margin-top: auto;
+    border-radius: 10px;
+  }
+  /* Add a class to the link */
+  .read-button {
+    background-color: #007bff; /* Light blue background */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .read-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
